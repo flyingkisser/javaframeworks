@@ -1,21 +1,23 @@
-package frameworks.io;
+package javaframeworks.io;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import logic.io.DBLogic;
-import frameworks.utils.Database;
+import javax.xml.crypto.Data;
+
+import javaframeworks.utils.Database;
 
 public class TableViewList {
 
 	//private ArrayList<HashMap<String,Object>> m_mapView=new ArrayList<>();
-	private static Database db=DBLogic.getInstance();
+	private  Database db;
 	private String m_strTableName;
 	private String m_strCondition;
 
-	public TableViewList(String tableName,String condition){
+	public TableViewList(Database db, String tableName,String condition){
 		m_strTableName=tableName;
 		m_strCondition=condition;
+		db=db;
 		//m_mapView=db.getNames("select * from %s where %s", tableName,condition);
 	}
 	

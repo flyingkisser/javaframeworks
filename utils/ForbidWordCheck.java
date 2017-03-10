@@ -1,9 +1,8 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.io.File;
 import java.util.ArrayList;
 
-import logic.config.GameConfig;
 
 //用于检测文本中是否有非法文字
 public class ForbidWordCheck {
@@ -14,7 +13,7 @@ public class ForbidWordCheck {
 	
 	public static ForbidWordCheck getInstance(){
 		if(s_objSelf==null)
-			s_objSelf=new ForbidWordCheck(GameConfig.getInstance().getLang());
+			s_objSelf=new ForbidWordCheck("cn");
 		return s_objSelf;
 	}
 	
@@ -28,7 +27,7 @@ public class ForbidWordCheck {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 		}
 	}

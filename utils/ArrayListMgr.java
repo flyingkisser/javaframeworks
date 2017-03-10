@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

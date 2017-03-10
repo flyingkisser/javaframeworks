@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import javax.script.Bindings;
 import javax.script.Invocable;

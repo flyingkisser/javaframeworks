@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import javax.script.Bindings;
 import javax.script.Invocable;
@@ -7,8 +7,8 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-import logic.config.GameConfig;
-import logic.system.GameMgr;
+//import logic.config.GameConfig;
+//import logic.system.GameMgr;
 
 public class JSEngine {
 	private static JSEngine s_objSelf=null;
@@ -48,7 +48,7 @@ public class JSEngine {
 		StackTraceElement[] stackElements = e.getStackTrace();
         if (stackElements != null) {
             for (int i = 0; i < stackElements.length; i++) 
-            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
         }
 	}
 		return o;
@@ -77,7 +77,7 @@ public class JSEngine {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 			System.exit(-1);
 		}

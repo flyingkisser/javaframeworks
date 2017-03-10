@@ -1,4 +1,4 @@
-package frameworks.io;
+package javaframeworks.io;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class ZipIO {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 		}
 		return null;
@@ -54,7 +54,7 @@ public class ZipIO {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 		}
 		return null;
@@ -81,7 +81,7 @@ public class ZipIO {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
         } finally {  
             try {  
@@ -120,7 +120,7 @@ public class ZipIO {
 				StackTraceElement[] stackElements = e.getStackTrace();
 		        if (stackElements != null) {
 		            for (int i = 0; i < stackElements.length; i++) 
-		            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+		            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 		        }
 	        } finally {  
 	            try {  
@@ -146,7 +146,7 @@ public class ZipIO {
 			byte[] c2=ZipIO.getInstance().unzipByte(c1);
 			
 			//int l=c2.length;
-			frameworks.utils.Log.getInstance().dbg("string %s bytelen %d unzip len %d", b1,b1.length,c2.length);
+			javaframeworks.utils.Log.getInstance().dbg("string %s bytelen %d unzip len %d", b1,b1.length,c2.length);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -154,7 +154,7 @@ public class ZipIO {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 			System.exit(-1);
 		}

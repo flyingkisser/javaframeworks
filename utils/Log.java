@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Json {
 	private static ObjectMapper json = new ObjectMapper();
-	private static Log log=frameworks.utils.Log.getInstance();
+	private static Log log=javaframeworks.utils.Log.getInstance();
 
 	public static HashMap<String,Object> decodeToHashMap(File stream){
 		try{
@@ -232,7 +232,7 @@ public class Json {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	log.error(stackElements[i].toString());
 	        }
 		}
 		return "";

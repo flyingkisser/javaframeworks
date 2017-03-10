@@ -1,11 +1,10 @@
-package frameworks.io;
+package javaframeworks.io;
 
 import java.util.HashMap;
 import java.util.HashSet;
 
-import logic.io.DBLogic;
-import frameworks.utils.Database;
-import frameworks.utils.Json;
+import javaframeworks.utils.Database;
+import javaframeworks.utils.Json;
 
 public class TableView {
 
@@ -18,12 +17,12 @@ public class TableView {
 	private HashSet<String> m_setDirtyLong=new HashSet<>();
 	private HashSet<String> m_setDirtyString=new HashSet<>();
 	
-	public TableView(String tableName,String condition){
-		m_strTableName=tableName;
-		m_strCondition=condition;
-		this.db=DBLogic.getInstance();
-		init();
-	}
+//	public TableView(String tableName,String condition){
+//		m_strTableName=tableName;
+//		m_strCondition=condition;
+//		this.db=DBLogic.getInstance();
+//		init();
+//	}
 	
 	public TableView(Database db, String tableName,String condition){
 			m_strTableName=tableName;
@@ -39,14 +38,14 @@ public class TableView {
 				throw new Exception("data is null table "+m_strTableName);
 		} catch (Exception e) {
 			//GameMgr.getInstance().setQuit();
-			frameworks.utils.Log.getInstance().error("data is null , table is %s "
+			javaframeworks.utils.Log.getInstance().error("data is null , table is %s "
 					+ "contition is %s",m_strTableName,m_strCondition);
 		
 			e.printStackTrace();
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 			System.exit(-1);
 		}

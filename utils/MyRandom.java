@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 public class MyRandom {
 
@@ -30,5 +30,18 @@ public class MyRandom {
    public static float randf()
    {
        return ((float)rand())/m;
+   }
+   
+   public static String getRandStr(int len){
+   	if(len==0)
+   		len=32;
+   	String chars="ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
+   	int maxPos=chars.length();
+   	String pwd="";
+   	for(int i=0;i<len;i++){
+           int index=rand(0,maxPos-1);
+   		pwd+=chars.charAt(index);
+   	}
+   	return pwd;
    }
 }

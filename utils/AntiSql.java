@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 public class AntiSql {
 	public static AntiSql self = null;

@@ -1,12 +1,12 @@
-package frameworks.io;
+package javaframeworks.io;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.util.HashMap;
 
-import frameworks.utils.Json;
-import frameworks.utils.Log;
+import javaframeworks.utils.Json;
+import javaframeworks.utils.Log;
 
 
 public class NetUDP {
@@ -17,7 +17,7 @@ public class NetUDP {
 	private DatagramPacket  m_recvPacket;
 	private DatagramSocket  m_sock;
 	private boolean bzip=false;
-	private Log log=Log.getInstance();
+	private javaframeworks.utils.Log log=javaframeworks.utils.Log.getInstance();
 	private  NetUDP(int port){
 		try {
 			m_sock=new DatagramSocket(port);
@@ -72,9 +72,9 @@ public class NetUDP {
 		{
 			e.printStackTrace();
 			if(m_sock==null)
-				frameworks.utils.Log.getInstance().error("m_sock is null");
+				log.error("m_sock is null");
 			if(m_recvPacket==null)
-				frameworks.utils.Log.getInstance().error("m_recvPacket is null");
+				log.error("m_recvPacket is null");
 			System.exit(-1);
 			
 		}

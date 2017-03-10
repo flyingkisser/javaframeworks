@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class Config {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 		}
 	}
@@ -107,7 +107,7 @@ public class Config {
 	public static void test(){
 		Config obj=new Config("config/HeroConfig.json");
 		ArrayList<Integer> heroidlist=obj.getKeysAsInt();
-		frameworks.utils.Log.getInstance().dbg("hero id list %s", Json.encode(heroidlist));
+		javaframeworks.utils.Log.getInstance().dbg("hero id list %s", Json.encode(heroidlist));
 		
 	}
 }

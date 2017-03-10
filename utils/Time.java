@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -53,8 +53,12 @@ public class Time {
 		return  Calendar.getInstance().getTimeInMillis();
 	}
 	
-	public static String getTimeFormated(){
-		return formatTimeShort(getTime());
+	public static String getTimeFormatedShort(){
+		return formatTimeShort(getTimeInMillis());
+	}
+	
+	public static String getTimeFormatedLong(){
+		return formatTime(getTimeInMillis());
 	}
 	
 	//value是秒数，格式化成小时，分钟，秒
@@ -69,8 +73,8 @@ public class Time {
 		return retList;
 	}
 	
-	//value是秒数，格式化成小时，分钟，秒
-	public static String formatTime(int value){
+	//value是秒数，计算出有多少小时，分钟，秒
+	public static String formatTimeBySec(int value){
 		ArrayList<Integer> retList=splitTime(value);
 		return String.format("%02d:%02d:%02d", retList.get(0),retList.get(1),retList.get(2));
 	}
@@ -114,11 +118,11 @@ public class Time {
 	}
 	
 	public static String formatTime(long timeStamp){
-		ArrayList<Integer> list=getDateValueByTime(timeStamp);
+		ArrayList<Integer> list=getDateValueByMicroTime(timeStamp);
 		return String.format("%d-%02d-%02d %02d:%02d:%02d:%04d",list.get(0),list.get(1),list.get(2),list.get(3),list.get(4),list.get(5),list.get(6));
 	}
 	public static String formatTimeShort(long timeStamp){
-		ArrayList<Integer> list=getDateValueByTime(timeStamp);
+		ArrayList<Integer> list=getDateValueByMicroTime(timeStamp);
 		return String.format("%d-%02d-%02d %02d:%02d:%02d",list.get(0),list.get(1),list.get(2),list.get(3),list.get(4),list.get(5));
 	}
 	
@@ -147,42 +151,42 @@ public class Time {
 		for(int i=1;i<=12;i++){
 			long time=Time.mkTime(2014, i, 1, 0, 0, 0);
 			String timestr=Time.formatTime(time);
-			frameworks.utils.Log.getInstance().dbg("2014-%02d-1 %s",i,timestr); 
+			javaframeworks.utils.Log.getInstance().dbg("2014-%02d-1 %s",i,timestr); 
 		}
 		
 		for(int i=1;i<=31;i++){
 			long time=Time.mkTime(2014, 1, i, 0, 0, 0);
 			String timestr=Time.formatTime(time);
-			frameworks.utils.Log.getInstance().dbg("2014-01-%02d %s",i,timestr); 
+			javaframeworks.utils.Log.getInstance().dbg("2014-01-%02d %s",i,timestr); 
 		}
 		
 		for(int i=1;i<=24;i++){
 			long time=Time.mkTime(2014, 1, 31, i, 0, 0);
 			String timestr=Time.formatTime(time);
-			frameworks.utils.Log.getInstance().dbg("2014-01-31 %02d:00:00 %s",i,timestr); 
+			javaframeworks.utils.Log.getInstance().dbg("2014-01-31 %02d:00:00 %s",i,timestr); 
 		}
 		
 		for(int i=1;i<=60;i++){
 			long time=Time.mkTime(2014, 1, 31, 1, i, 0);
 			String timestr=Time.formatTime(time);
-			frameworks.utils.Log.getInstance().dbg("2014-01-31 1:%02d:00 %s",i,timestr); 
+			javaframeworks.utils.Log.getInstance().dbg("2014-01-31 1:%02d:00 %s",i,timestr); 
 		}
 		
 		for(int i=1;i<=60;i++){
 			long time=Time.mkTime(2014, 1, 31, 1, 30, i);
 			String timestr=Time.formatTime(time);
-			frameworks.utils.Log.getInstance().dbg("2014-01-31 1:30:%02d %s",i,timestr); 
+			javaframeworks.utils.Log.getInstance().dbg("2014-01-31 1:30:%02d %s",i,timestr); 
 		}
 		
-		frameworks.utils.Log.getInstance().dbg("%d-%02d-%02d %02d:%02d:%02d:%04d days %d maxdays %d", y,m,d,h,min,s,ms,days,maxdays);
+		javaframeworks.utils.Log.getInstance().dbg("%d-%02d-%02d %02d:%02d:%02d:%04d days %d maxdays %d", y,m,d,h,min,s,ms,days,maxdays);
 		
-		frameworks.utils.Log.getInstance().dbg("time1 %d time2 %d %s time3 %d %s", a1,a2,timestr1,a3,timestr2);
+		javaframeworks.utils.Log.getInstance().dbg("time1 %d time2 %d %s time3 %d %s", a1,a2,timestr1,a3,timestr2);
 		
 		a1=Time.mkTime(2014, 12, 11, 0,0,0);
 		a2=Time.mkTime(2011, 12, 11, 24,0,0);
 		timestr1=Time.formatTime(a1);
 		timestr2=Time.formatTime(a2);
-		frameworks.utils.Log.getInstance().dbg("time1 %d %s time2 %d %s", a1,timestr1,a2,timestr2);
+		javaframeworks.utils.Log.getInstance().dbg("time1 %d %s time2 %d %s", a1,timestr1,a2,timestr2);
 	}
 	
 }

@@ -1,20 +1,20 @@
-package frameworks.io;
+package javaframeworks.io;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import logic.io.DBLogic;
-import frameworks.utils.Database;
+import javaframeworks.utils.Database;
 
 public class TableViewAll {
 
 	//private ArrayList<HashMap<String,Object>> m_mapView=new ArrayList<>();
-	private static Database db=DBLogic.getInstance();
+	private Database db;
 	private String m_strTableName;
 	//private String m_strCondition;
 
-	public TableViewAll(String tableName){
+	public TableViewAll(Database db, String tableName){
 		m_strTableName=tableName;
+		db=db;
 	}
 	
 	public ArrayList<HashMap<String, Object>> getAll()

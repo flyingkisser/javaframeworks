@@ -1,4 +1,4 @@
-package frameworks.utils;
+package javaframeworks.utils;
 
 public class Memory {
 	private static final Runtime s_runtime = Runtime.getRuntime();
@@ -34,7 +34,7 @@ public class Memory {
 			StackTraceElement[] stackElements = e.getStackTrace();
 	        if (stackElements != null) {
 	            for (int i = 0; i < stackElements.length; i++) 
-	            	frameworks.utils.Log.getInstance().error(stackElements[i].toString());
+	            	javaframeworks.utils.Log.getInstance().error(stackElements[i].toString());
 	        }
 		}
 	}
